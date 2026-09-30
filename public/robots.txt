@@ -1,0 +1,16 @@
+# robots.txt for BK-DIGITAL (https://bk-digital.com)
+# Allow all search engine crawlers (Google, Bing, Yahoo, DuckDuckGo)
+
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Allow Googlebot and WhatsApp crawler full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# XML Sitemap Location
+Sitemap: https://bk-digital.com/sitemap.xml

@@ -1,0 +1,6 @@
+{
+  "name": "BK-DIGITAL",
+  "description": "Digital Experiences. Intelligent Systems. Automated Growth. Premium websites, web applications, custom software, CRM dashboards, and AI automation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
