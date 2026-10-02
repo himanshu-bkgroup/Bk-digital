@@ -39,3 +39,8 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
     Content-Type = "text/plain; charset=utf-8"
+
+[[headers]]
+  for = "/google*.html"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
