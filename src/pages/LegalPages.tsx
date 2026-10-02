@@ -26,30 +26,30 @@ export const LegalPages: React.FC<LegalPageProps> = ({ type, onNavigateHome }) =
         {isPrivacy ? 'PRIVACY & DATA POLICY' : 'TERMS OF ENGAGEMENT'}
       </h1>
       <p className="mt-2 text-xs text-neutral-500 font-mono">
-        Last updated: January 2025 · BK-DIGITAL
+        Last updated: October 2026 · Bhavkan Digital (BK-DIGITAL)
       </p>
 
       <div className="mt-10 space-y-8 text-sm leading-relaxed border-t border-neutral-800 pt-8">
         {isPrivacy ? (
           <>
             <div>
-              <h2 className="font-display text-lg font-bold text-white mb-2">1. Overview & Data Philosophy</h2>
+              <h2 className="font-display text-lg font-bold text-white mb-2">1. Overview &amp; Data Philosophy</h2>
               <p>
-                BK-DIGITAL respects your corporate privacy and the integrity of your intellectual property. We do not sell, barter, or distribute client contact records or proprietary operational details to third-party aggregators or advertising networks.
+                Bhavkan Digital (BK-DIGITAL) respects your corporate privacy and the integrity of your intellectual property. We do not sell, barter, or distribute client contact records or proprietary operational details to third-party aggregators or advertising networks.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display text-lg font-bold text-white mb-2">2. Information Collection & Usage</h2>
+              <h2 className="font-display text-lg font-bold text-white mb-2">2. Information Collection &amp; Usage</h2>
               <p>
                 When you submit project requirements, estimator data, or chat inquiries, we collect information solely to assess technical feasibility, calculate resource allocations, and communicate milestone deliverables.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display text-lg font-bold text-white mb-2">3. Storage & Infrastructure Security</h2>
+              <h2 className="font-display text-lg font-bold text-white mb-2">3. Storage &amp; Infrastructure Security</h2>
               <p>
-                All data stored within BK-DIGITAL systems is managed with encrypted database connections (PostgreSQL/Supabase) utilizing industry-standard Row Level Security (RLS) and strict least-privilege administrative access protocols.
+                All data stored within Bhavkan Digital (BK-DIGITAL) systems is managed with encrypted database connections (PostgreSQL/Supabase) utilizing industry-standard Row Level Security (RLS) and strict least-privilege administrative access protocols.
               </p>
             </div>
 
@@ -65,7 +65,7 @@ export const LegalPages: React.FC<LegalPageProps> = ({ type, onNavigateHome }) =
             <div>
               <h2 className="font-display text-lg font-bold text-white mb-2">1. Scope of Engagement</h2>
               <p>
-                BK-DIGITAL provides custom software engineering, website development, database architecture, and automation services. All engagements are executed against mutually agreed Statements of Work (SOW) defining milestones, deliverables, and timelines.
+                Bhavkan Digital (BK-DIGITAL) provides custom software engineering, website development, database architecture, and automation services. All engagements are executed against mutually agreed Statements of Work (SOW) defining milestones, deliverables, and timelines.
               </p>
             </div>
 

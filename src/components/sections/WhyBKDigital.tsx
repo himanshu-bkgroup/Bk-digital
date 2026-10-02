@@ -43,10 +43,10 @@ export const WhyBKDigital: React.FC = () => {
             Core Philosophy
           </span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            WHY MODERN ENTERPRISES CHOOSE BK-DIGITAL
+            WHY MODERN ENTERPRISES CHOOSE BHAVKAN DIGITAL (BK-DIGITAL)
           </h2>
           <p className="mt-3 text-sm sm:text-base text-neutral-400">
-            We operate as an elite engineering partner, building enduring digital systems that move businesses forward.
+            We operate as an elite engineering partner at Bhavkan Digital (BK-DIGITAL), building enduring digital systems that move businesses forward.
           </p>
         </div>
 

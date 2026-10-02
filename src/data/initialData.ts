@@ -356,8 +356,8 @@ export const TECH_STACK = [
 
 export const FAQS = [
   {
-    question: 'How is BK-DIGITAL different from a generic web agency?',
-    answer: 'Traditional agencies treat websites as isolated brochures that sit stagnant online. BK-DIGITAL approaches your business from an engineering perspective: we connect your website directly to your sales pipeline, WhatsApp triggers, CRM database, and AI automation. Your website becomes the active operational front door of an automated business machine.'
+    question: 'How is Bhavkan Digital (BK-DIGITAL) different from a generic web agency?',
+    answer: 'Traditional agencies treat websites as isolated brochures that sit stagnant online. Bhavkan Digital (BK-DIGITAL) approaches your business from an engineering perspective: we connect your website directly to your sales pipeline, WhatsApp triggers, CRM database, and AI automation. Your website becomes the active operational front door of an automated business machine.'
   },
   {
     question: 'Can you work with international clients outside India?',

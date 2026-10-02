@@ -31,7 +31,7 @@ export const ContactPage: React.FC<{ settings: SiteSettings }> = ({ settings }) 
   };
 
   const handleWhatsApp = () => {
-    const text = 'Hello BK-DIGITAL, I would like to schedule an engineering consultation call.';
+    const text = 'Hello Bhavkan Digital (BK-DIGITAL), I would like to schedule an engineering consultation call.';
     openWhatsApp(settings.whatsappNumber, text);
   };
 
@@ -42,10 +42,10 @@ export const ContactPage: React.FC<{ settings: SiteSettings }> = ({ settings }) 
           Direct Communications
         </span>
         <h1 className="mt-3 font-display text-4xl sm:text-5xl font-black text-white">
-          CONTACT BK-DIGITAL
+          CONTACT BHAVKAN DIGITAL (BK-DIGITAL)
         </h1>
         <p className="mt-4 text-base text-neutral-300 leading-relaxed">
-          Connect directly with our solutions engineering team. We respond to all qualified inquiries within 24 business hours.
+          Connect directly with our solutions engineering team at Bhavkan Digital (BK-DIGITAL). We respond to all qualified inquiries within 24 business hours.
         </p>
       </div>
 

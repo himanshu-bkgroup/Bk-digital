@@ -1,9 +1,9 @@
 import { GoogleGenAI } from '@google/genai';
 
-const SYSTEM_INSTRUCTION = `You are "BK AI", the official intelligent assistant for BK-DIGITAL (Digital Experiences. Intelligent Systems. Automated Growth).
+const SYSTEM_INSTRUCTION = `You are "Bhavkan AI", the official intelligent assistant for Bhavkan Digital (BK-DIGITAL) (Digital Experiences. Intelligent Systems. Automated Growth).
 
 COMPANY INFORMATION & GROUND RULES:
-- BK-DIGITAL is a modern digital technology and software development company.
+- Bhavkan Digital (BK-DIGITAL) is a modern digital technology and software development company.
 - We do not simply "make websites". We build: Websites + Software + Automation + AI Systems that help businesses operate digitally.
 - Leadership:
   - Founder & CEO: Himanshu Mishra. Leads strategy, software architecture, technical direction, and enterprise solutions delivery. Direct email: himanshu.bkgroup@gmail.com.
@@ -30,7 +30,7 @@ COMPANY INFORMATION & GROUND RULES:
 - STRICT NEGATIVE CONSTRAINTS:
   - Never fabricate prices, clients, reviews, revenue numbers, or guarantees.
   - If asked about exact cost: explain that pricing depends on scope, offer to use the interactive Project Estimator or request a discovery consultation.
-  - If unsure or asked about unrelated matters: "Please contact BK-DIGITAL directly for confirmation."
+  - If unsure or asked about unrelated matters: "Please contact Bhavkan Digital (BK-DIGITAL) directly for confirmation."
   - Always stay professional, concise, technologically sophisticated, and helpful. Suggest "Start a Project" or "Talk on WhatsApp" when relevant.`;
 
 // Grounded fallback response generator for offline or missing API key
@@ -38,7 +38,7 @@ function getLocalSmartResponse(userQuery: string): string {
   const q = userQuery.toLowerCase();
 
   if (q.includes('himanshu') || q.includes('founder') || q.includes('ceo') || q.includes('owner') || q.includes('who runs') || q.includes('leadership')) {
-    return "**Himanshu Mishra** is the **Founder & CEO** of BK-DIGITAL. He leads the company's technical architecture, system design, and digital engineering vision. You can explore his full profile, technical philosophy, and direct communication channel on our **Founder / Leadership** page (/owner) or email him directly at himanshu.bkgroup@gmail.com.";
+    return "**Himanshu Mishra** is the **Founder & CEO** of Bhavkan Digital (BK-DIGITAL). He leads the company's technical architecture, system design, and digital engineering vision. You can explore his full profile, technical philosophy, and direct communication channel on our **Founder / Leadership** page (/owner) or email him directly at himanshu.bkgroup@gmail.com.";
   }
 
   if (q.includes('price') || q.includes('cost') || q.includes('how much') || q.includes('rate')) {
@@ -46,7 +46,7 @@ function getLocalSmartResponse(userQuery: string): string {
   }
 
   if (q.includes('crm') || q.includes('dashboard')) {
-    return "Yes! BK-DIGITAL specializes in custom CRM systems and admin dashboards. Rather than forcing your business to adapt to bloated generic platforms, we build lean, role-based command centers featuring lead pipelines, automated WhatsApp alerts, activity logs, and export tools tailored to your operational workflow.";
+    return "Yes! Bhavkan Digital (BK-DIGITAL) specializes in custom CRM systems and admin dashboards. Rather than forcing your business to adapt to bloated generic platforms, we build lean, role-based command centers featuring lead pipelines, automated WhatsApp alerts, activity logs, and export tools tailored to your operational workflow.";
   }
 
   if (q.includes('whatsapp') || q.includes('automate whatsapp')) {
@@ -54,7 +54,7 @@ function getLocalSmartResponse(userQuery: string): string {
   }
 
   if (q.includes('ai') || q.includes('artificial intelligence') || q.includes('bot')) {
-    return "BK-DIGITAL builds practical, value-driven AI automation systems. This includes 24/7 grounded conversational assistants, automated lead qualification, intelligent invoice & document extraction, and automatic proposal generators designed to save hundreds of manual hours.";
+    return "Bhavkan Digital (BK-DIGITAL) builds practical, value-driven AI automation systems. This includes 24/7 grounded conversational assistants, automated lead qualification, intelligent invoice & document extraction, and automatic proposal generators designed to save hundreds of manual hours.";
   }
 
   if (q.includes('how long') || q.includes('timeline') || q.includes('duration') || q.includes('time')) {
@@ -62,7 +62,7 @@ function getLocalSmartResponse(userQuery: string): string {
   }
 
   if (q.includes('international') || q.includes('usa') || q.includes('uk') || q.includes('dubai') || q.includes('uae') || q.includes('australia')) {
-    return "Yes! BK-DIGITAL operates globally and is structured specifically for remote collaboration with clients in the USA, UK, Canada, Australia, UAE, India, and other international markets. We ensure transparent milestone tracking and communication across time zones.";
+    return "Yes! Bhavkan Digital (BK-DIGITAL) operates globally and is structured specifically for remote collaboration with clients in the USA, UK, Canada, Australia, UAE, India, and other international markets. We ensure transparent milestone tracking and communication across time zones.";
   }
 
   if (q.includes('redesign') || q.includes('existing website') || q.includes('old website')) {
@@ -73,7 +73,7 @@ function getLocalSmartResponse(userQuery: string): string {
     return "Our selected projects include:\n1. **SHAKIL BAG STORE** — Local SEO & catalog enquiry system.\n2. **HM GYM** — Gym management SaaS with member & workout tracking.\n3. **SURYA HOSPITAL** — Multispeciality clinical appointment portal.\n4. **LAB TEST NOIDA** — Pathology diagnostics acquisition system.\n5. **AURA LUXURY** — Luxury aesthetic salon VIP reservation experience.\n\nYou can explore deep-dive case studies in our **Selected Work** section.";
   }
 
-  return "BK-DIGITAL designs and engineers premium digital experiences, custom software, CRM dashboards, and AI automation systems. Would you like to **Start a Project**, try our **Project Estimator**, or **Talk on WhatsApp** with our team?";
+  return "Bhavkan Digital (BK-DIGITAL) designs and engineers premium digital experiences, custom software, CRM dashboards, and AI automation systems. Would you like to **Start a Project**, try our **Project Estimator**, or **Talk on WhatsApp** with our team?";
 }
 
 export async function askBKAI(

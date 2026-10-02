@@ -60,7 +60,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               {/* Supporting Paragraph */}
               <p className="max-w-xl mx-auto lg:mx-0 text-sm sm:text-base text-neutral-300 leading-relaxed">
-                BK-DIGITAL is India's premier engineering studio for high-converting website development, custom business software, CRM platforms, and intelligent automation systems. Led by Founder &amp; CEO Himanshu Mishra, we build digital machines that dominate markets and scale operations.
+                Bhavkan Digital (BK-DIGITAL) is India's premier engineering studio for high-converting website development, custom business software, CRM platforms, and intelligent automation systems. Led by Founder &amp; CEO Himanshu Mishra, we build digital machines that dominate markets and scale operations.
               </p>
 
               {/* 3 CTAs */}

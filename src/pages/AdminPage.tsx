@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   ShieldCheck, Lock, Users, FolderKanban, Wrench, Settings as SettingsIcon,
   BarChart3, Plus, Trash2, Edit2, Download, CheckCircle2, MessageSquare,
-  LogOut, Save, Eye, ArrowUpRight, Search, Globe, FileText, CheckCircle, ExternalLink, Copy, Zap
+  LogOut, Save, Eye, ArrowUpRight, Search, Globe, FileText, CheckCircle, ExternalLink, Copy, Zap,
+  Upload, RotateCcw, Camera
 } from 'lucide-react';
 import { Lead, Project, Service, SiteSettings, AnalyticsEvent } from '../types';
 import { Storage } from '../lib/storage';
@@ -40,6 +41,37 @@ export const AdminPage: React.FC<AdminPageProps> = ({
   // Edit Settings state
   const [editSettings, setEditSettings] = useState<SiteSettings>(settings);
   const [settingsSaved, setSettingsSaved] = useState(false);
+
+  // Founder Executive Portrait State
+  const [founderAvatar, setFounderAvatar] = useState<string>(() => {
+    return localStorage.getItem('bk_founder_custom_avatar') || '/src/assets/images/himanshu_founder_ceo_1790965828306.jpg';
+  });
+  const [photoUploadSuccess, setPhotoUploadSuccess] = useState(false);
+  const founderPhotoInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFounderPhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const result = event.target?.result as string;
+        if (result) {
+          setFounderAvatar(result);
+          localStorage.setItem('bk_founder_custom_avatar', result);
+          setPhotoUploadSuccess(true);
+          setTimeout(() => setPhotoUploadSuccess(false), 4000);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleResetFounderPhoto = () => {
+    localStorage.removeItem('bk_founder_custom_avatar');
+    setFounderAvatar('/src/assets/images/himanshu_founder_ceo_1790965828306.jpg');
+    setPhotoUploadSuccess(true);
+    setTimeout(() => setPhotoUploadSuccess(false), 4000);
+  };
 
   // Project Modal State
   const [showProjectModal, setShowProjectModal] = useState(false);
@@ -785,9 +817,100 @@ export const AdminPage: React.FC<AdminPageProps> = ({
         </div>
       )}
 
-      {/* TAB 5: SITE SETTINGS */}
+      {/* TAB 5: SITE SETTINGS & FOUNDER PHOTO MANAGEMENT */}
       {activeTab === 'settings' && (
-        <form onSubmit={handleSaveSettings} className="rounded-xl border border-neutral-800 bg-[#090C14] p-6 sm:p-8 max-w-3xl space-y-6 text-xs">
+        <div className="space-y-8 max-w-4xl">
+          {/* Founder Executive Portrait Management Card */}
+          <div className="rounded-2xl border border-neutral-700/80 bg-[#090C14] p-6 sm:p-8 space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-neutral-800 pb-4">
+              <div>
+                <span className="font-mono text-xs uppercase tracking-wider text-[#D4AF37] block mb-1">
+                  Executive Identity &amp; Leadership Photo
+                </span>
+                <h3 className="font-display text-xl font-bold text-white">
+                  Founder Executive Portrait (Himanshu Mishra)
+                </h3>
+                <p className="text-xs text-neutral-400 mt-1">
+                  Only administrators can change this photo. Changes sync instantly across the public Leadership (/owner) and About Studio (/about) pages.
+                </p>
+              </div>
+
+              {photoUploadSuccess && (
+                <div className="flex items-center gap-1.5 rounded-lg bg-[#3DD68C]/15 border border-[#3DD68C]/40 px-3 py-1.5 text-xs text-[#3DD68C] font-mono">
+                  <CheckCircle2 className="h-4 w-4" />
+                  <span>Founder Photo Synced Across Site!</span>
+                </div>
+              )}
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              {/* Photo Preview Frame */}
+              <div className="relative aspect-[3/4] w-36 sm:w-44 rounded-2xl overflow-hidden border-2 border-[#D4AF37]/50 bg-neutral-900 shadow-2xl shrink-0">
+                <img
+                  src={founderAvatar}
+                  alt="Himanshu Mishra Active Portrait"
+                  className="h-full w-full object-cover object-top"
+                />
+                <div className="absolute bottom-2 left-2 right-2 rounded bg-black/80 backdrop-blur-sm px-2 py-1 text-center">
+                  <span className="text-[10px] font-mono text-[#D4AF37] block">Active Photo</span>
+                </div>
+              </div>
+
+              {/* Upload Controls & Actions */}
+              <div className="flex-1 space-y-4 text-center sm:text-left">
+                <div>
+                  <h4 className="font-display text-base font-bold text-white">
+                    Upload New High-Resolution Portrait
+                  </h4>
+                  <p className="text-xs text-neutral-300 mt-1 leading-relaxed">
+                    Choose any photo file (PNG, JPG, WEBP) from your device. It will immediately update and show on your live website.
+                  </p>
+                </div>
+
+                {/* Hidden File Input */}
+                <input
+                  type="file"
+                  ref={founderPhotoInputRef}
+                  onChange={handleFounderPhotoUpload}
+                  accept="image/*"
+                  className="hidden"
+                  title="Upload Founder Photo"
+                />
+
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 pt-1">
+                  <button
+                    type="button"
+                    onClick={() => founderPhotoInputRef.current?.click()}
+                    className="inline-flex items-center gap-2 rounded-lg bg-[#D4AF37] px-5 py-2.5 text-xs font-bold text-black hover:bg-[#E5C158] transition-colors shadow-lg shadow-[#D4AF37]/20"
+                  >
+                    <Upload className="h-4 w-4" />
+                    <span>Upload New Photo From Device</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleResetFounderPhoto}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-2.5 text-xs font-semibold text-neutral-300 hover:text-white hover:border-neutral-500 transition-colors"
+                  >
+                    <RotateCcw className="h-3.5 w-3.5 text-neutral-400" />
+                    <span>Reset to Studio Default</span>
+                  </button>
+                </div>
+
+                <div className="rounded-lg bg-[#05060A] border border-neutral-800/80 p-3 text-xs text-neutral-400 space-y-1">
+                  <span className="font-mono text-[10px] text-[#3DD68C] uppercase block font-semibold flex items-center gap-1.5">
+                    <ShieldCheck className="h-3.5 w-3.5" />
+                    <span>Admin Security Applied</span>
+                  </span>
+                  <p className="text-[11px] leading-relaxed text-neutral-300">
+                    The public "Upload Photo" button has been completely removed from public view. Only authenticated administrators in this portal can upload or change the founder photo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form onSubmit={handleSaveSettings} className="rounded-xl border border-neutral-800 bg-[#090C14] p-6 sm:p-8 space-y-6 text-xs">
           <div className="border-b border-neutral-800 pb-4 flex items-center justify-between">
             <div>
               <h3 className="font-display text-lg font-bold text-white">
@@ -883,6 +1006,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
             <span>Save Global Configurations</span>
           </button>
         </form>
+      </div>
       )}
 
       {/* TAB 6: GOOGLE #1 RANKING & NETLIFY SEO PLAYBOOK */}
@@ -900,7 +1024,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                   GOOGLE #1 RANKING PLAYBOOK FOR INDIA
                 </h2>
                 <p className="mt-1 text-sm text-neutral-300 max-w-2xl">
-                  Engineered specifically for Himanshu Mishra (Founder &amp; CEO) to rank <strong className="text-white">BK-DIGITAL</strong> at the very top of Google for <em className="text-[#D4AF37] not-italic">"website development"</em> and <em className="text-[#D4AF37] not-italic">"custom software"</em> across India.
+                  Engineered specifically for Himanshu Mishra (Founder &amp; CEO) to rank <strong className="text-white">Bhavkan Digital (BK-DIGITAL)</strong> at the very top of Google for <em className="text-[#D4AF37] not-italic">"website development"</em> and <em className="text-[#D4AF37] not-italic">"custom software"</em> across India.
                 </p>
               </div>
 
@@ -1226,7 +1350,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                       Build 7 High-Authority Business Citations &amp; Backlinks (Free)
                     </h4>
                     <p className="text-xs text-neutral-300 leading-relaxed">
-                      Create free company profiles on these 7 platforms using the exact same company name (<strong className="text-white">BK-DIGITAL</strong>), address (Noida / Delhi NCR), phone (<strong className="text-white">+91 72178 76220</strong>), and website link:
+                      Create free company profiles on these 7 platforms using the exact same company name (<strong className="text-white">Bhavkan Digital (BK-DIGITAL)</strong>), address (Noida / Delhi NCR), phone (<strong className="text-white">+91 72178 76220</strong>), and website link:
                     </p>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-medium text-neutral-200 pt-1">
                       <div className="p-2 rounded bg-neutral-900 border border-neutral-800 text-center">Clutch.co</div>
@@ -1239,7 +1363,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                       <div className="p-2 rounded bg-neutral-900 border border-neutral-800 text-center">DesignRush</div>
                     </div>
                     <p className="text-[11px] text-neutral-400">
-                      These backlinks transfer high domain authority to your site, giving Google the trust signals needed to push BK-DIGITAL to page 1.
+                      These backlinks transfer high domain authority to your site, giving Google the trust signals needed to push Bhavkan Digital (BK-DIGITAL) to page 1.
                     </p>
                   </div>
                 </div>
@@ -1261,7 +1385,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     <div className="p-3 rounded-lg bg-[#0E121B] border border-neutral-800 text-xs text-neutral-300 space-y-1">
                       <span className="font-semibold text-[#D4AF37] block">WhatsApp Message to Send Past/Existing Clients:</span>
                       <p className="italic font-serif text-neutral-400">
-                        "Hi [Client Name], thank you for partnering with BK-DIGITAL! Could you take 30 seconds to drop us a quick 5-star Google review mentioning the website development / custom software we built for you? It really helps us grow: [Google Review Link]"
+                        "Hi [Client Name], thank you for partnering with Bhavkan Digital (BK-DIGITAL)! Could you take 30 seconds to drop us a quick 5-star Google review mentioning the website development / custom software we built for you? It really helps us grow: [Google Review Link]"
                       </p>
                     </div>
                   </div>
@@ -1282,7 +1406,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                       When Indian buyers land on your site from Google, over 70% prefer to immediately chat on WhatsApp instead of waiting for an email reply.
                     </p>
                     <p className="text-xs text-neutral-400">
-                      We have engineered every inquiry button, proposal estimator, and case study across BK-DIGITAL to route directly to Himanshu Mishra's WhatsApp (+91 72178 76220) with pre-filled context, locking in prospects before they look at a competitor.
+                      We have engineered every inquiry button, proposal estimator, and case study across Bhavkan Digital (BK-DIGITAL) to route directly to Himanshu Mishra's WhatsApp (+91 72178 76220) with pre-filled context, locking in prospects before they look at a competitor.
                     </p>
                   </div>
                 </div>

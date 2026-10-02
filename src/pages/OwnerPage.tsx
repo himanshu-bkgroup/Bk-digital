@@ -15,8 +15,12 @@ interface OwnerPageProps {
 export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) => {
   const founderEmail = 'himanshu.bkgroup@gmail.com';
 
+  const founderAvatar =
+    localStorage.getItem('bk_founder_custom_avatar') ||
+    '/src/assets/images/himanshu_founder_ceo_1790965828306.jpg';
+
   const handleFounderWhatsApp = () => {
-    const text = 'Hello Himanshu, I would like to schedule a direct architectural discussion regarding a project with BK-DIGITAL.';
+    const text = 'Hello Himanshu, I would like to schedule a direct architectural discussion regarding a project with Bhavkan Digital (BK-DIGITAL).';
     openWhatsApp(settings.whatsappNumber, text);
   };
 
@@ -47,19 +51,19 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
                   <div className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-[#3DD68C]" />
                     <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-300 font-semibold">
-                      Founder & Chief Executive Officer
+                      Founder &amp; Chief Executive Officer
                     </span>
                   </div>
-                  <span className="font-mono text-[10px] text-[#D4AF37]">BK-DIGITAL</span>
+                  <span className="font-mono text-[10px] text-[#D4AF37]">BHAVKAN DIGITAL</span>
                 </div>
 
                 {/* Portrait Image */}
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-900">
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-900 group/img">
                   <img
-                    src="/src/assets/images/himanshu_mishra_founder_1790475103548.jpg"
-                    alt="Himanshu Mishra - Founder & CEO, BK-DIGITAL"
+                    src={founderAvatar}
+                    alt="Himanshu Mishra - Founder & CEO, Bhavkan Digital (BK-DIGITAL)"
                     referrerPolicy="no-referrer"
-                    className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050608] via-transparent to-transparent opacity-80" />
 
@@ -70,7 +74,7 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
                         Himanshu Mishra
                       </h3>
                       <p className="text-xs font-mono text-[#D4AF37]">
-                        Founder & CEO
+                        Founder &amp; CEO
                       </p>
                     </div>
 
@@ -113,23 +117,23 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
                 Himanshu Mishra
               </h1>
               <p className="mt-1 font-display text-lg sm:text-xl font-bold text-metallic-gold">
-                Founder & Chief Executive Officer — BK-DIGITAL
+                Founder &amp; Chief Executive Officer — Bhavkan Digital (BK-DIGITAL)
               </p>
             </div>
 
             {/* Executive Quote */}
             <div className="border-l-2 border-[#D4AF37] pl-4 sm:pl-6 py-1">
               <blockquote className="text-sm sm:text-base text-neutral-200 italic font-medium leading-relaxed">
-                “Most businesses suffer from a fundamental disconnect: creative agencies deliver cosmetic websites that sit passive, while traditional IT houses build rigid software that nobody wants to use. At BK-DIGITAL, we build cohesive digital systems — where the user interface, database, WhatsApp pipeline, and AI intelligence operate as one synchronized engine.”
+                “Most businesses suffer from a fundamental disconnect: creative agencies deliver cosmetic websites that sit passive, while traditional IT houses build rigid software that nobody wants to use. At Bhavkan Digital (BK-DIGITAL), we build cohesive digital systems — where the user interface, database, WhatsApp pipeline, and AI intelligence operate as one synchronized engine.”
               </blockquote>
             </div>
 
             <p className="text-sm text-neutral-300 leading-relaxed">
-              As the Founder and CEO of BK-DIGITAL, <strong className="text-white">Himanshu Mishra</strong> spearheads the company’s engineering direction, product architecture, and enterprise client engagements across India, the USA, the UK, Canada, Australia, and the UAE.
+              As the Founder and CEO of Bhavkan Digital (BK-DIGITAL), <strong className="text-white">Himanshu Mishra</strong> spearheads the company’s engineering direction, product architecture, and enterprise client engagements across India, the USA, the UK, Canada, Australia, and the UAE.
             </p>
 
             <p className="text-sm text-neutral-300 leading-relaxed">
-              With a deep foundation in high-performance web applications, relational database design, cloud infrastructure, and autonomous automation pipelines, Himanshu ensures that every client project is engineered to eliminate manual drag, capture verified commercial demand, and scale seamlessly.
+              With a deep foundation in high-performance web applications, relational database design, cloud infrastructure, and autonomous automation pipelines, Himanshu ensures that every client project at Bhavkan Digital (BK-DIGITAL) is engineered to eliminate manual drag, capture verified commercial demand, and scale seamlessly.
             </p>
 
             {/* Direct Connect Buttons */}
@@ -139,22 +143,22 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
                 className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-5 py-3 text-xs font-bold text-black hover:bg-[#20ba59] transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)]"
               >
                 <MessageSquare className="h-4 w-4" />
-                <span>Discuss Project on WhatsApp</span>
+                <span>Direct WhatsApp with Himanshu</span>
               </button>
 
               <a
-                href={`mailto:${founderEmail}?subject=Direct%20Inquiry%20for%20Himanshu%20Mishra%20(BK-DIGITAL)`}
-                className="inline-flex items-center gap-2 rounded-lg border border-neutral-700 bg-neutral-900 px-5 py-3 text-xs font-semibold text-white hover:border-[#D4AF37] hover:text-[#FFF0BD] transition-all"
+                href={`mailto:${founderEmail}?subject=Direct%20Inquiry%20for%20Himanshu%20Mishra%20(Bhavkan%20Digital)`}
+                className="inline-flex items-center gap-2 rounded-lg border border-neutral-700 bg-neutral-900/90 px-5 py-3 text-xs font-semibold text-white hover:border-[#D4AF37] hover:text-[#FFF0BD] transition-all"
               >
                 <Mail className="h-4 w-4 text-[#D4AF37]" />
-                <span>Email Founder Directly</span>
+                <span>Direct Executive Email</span>
               </a>
 
               <button
                 onClick={() => onNavigate('/start-project')}
                 className="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-[#07090F] px-4 py-3 text-xs font-semibold text-neutral-300 hover:text-white hover:border-neutral-600 transition-all"
               >
-                <span>Initiate Project Scope</span>
+                <span>Project Estimator</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>
             </div>
@@ -162,76 +166,14 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
         </div>
       </div>
 
-      {/* Leadership Pillars */}
+      {/* Leadership Tenets Grid */}
       <div className="mb-16">
-        <div className="max-w-2xl mb-8">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-mono">
-            Core Competencies
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#D4AF37]">
+            Core Operating Philosophy
           </span>
-          <h2 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-white">
-            Areas of Technical Specialization
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div className="rounded-2xl border border-neutral-800 bg-[#090C14] p-6 hover:border-neutral-700 transition-colors">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-800 bg-[#121622] text-[#D4AF37] mb-4">
-              <Code className="h-5 w-5" />
-            </div>
-            <h3 className="font-display text-base font-bold text-white mb-2">
-              Full-Stack Architecture
-            </h3>
-            <p className="text-xs text-neutral-300 leading-relaxed">
-              Engineered web applications built with TypeScript, React, Next.js, and Node.js adhering to strict clean-code principles and sub-second load times.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-neutral-800 bg-[#090C14] p-6 hover:border-neutral-700 transition-colors">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-800 bg-[#121622] text-[#D4AF37] mb-4">
-              <Layers className="h-5 w-5" />
-            </div>
-            <h3 className="font-display text-base font-bold text-white mb-2">
-              Custom CRM & Dashboards
-            </h3>
-            <p className="text-xs text-neutral-300 leading-relaxed">
-              Purpose-built operational command consoles that map to real business sales stages, user roles, inventory tracking, and client communication.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-neutral-800 bg-[#090C14] p-6 hover:border-neutral-700 transition-colors">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-800 bg-[#121622] text-[#D4AF37] mb-4">
-              <Cpu className="h-5 w-5" />
-            </div>
-            <h3 className="font-display text-base font-bold text-white mb-2">
-              Applied AI Automation
-            </h3>
-            <p className="text-xs text-neutral-300 leading-relaxed">
-              24/7 conversational agents, automated lead classification, and intelligent document drafting using Gemini APIs and grounded RAG knowledge models.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-neutral-800 bg-[#090C14] p-6 hover:border-neutral-700 transition-colors">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-800 bg-[#121622] text-[#D4AF37] mb-4">
-              <Globe className="h-5 w-5" />
-            </div>
-            <h3 className="font-display text-base font-bold text-white mb-2">
-              Global Delivery Standards
-            </h3>
-            <p className="text-xs text-neutral-300 leading-relaxed">
-              Transparent cross-border sprint reviews, non-disclosure security, and full client ownership of all intellectual property and repositories.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Engineering Philosophy: The 4 Commandments */}
-      <div className="rounded-2xl border border-neutral-800 bg-[#080A10] p-8 sm:p-12 mb-16">
-        <div className="max-w-2xl mb-8">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-mono">
-            Founder's Code
-          </span>
-          <h2 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-white">
-            Engineering Principles by Himanshu Mishra
+          <h2 className="mt-2 font-display text-2xl sm:text-3xl font-black text-white">
+            How Himanshu Mishra Directs Engineering at Bhavkan Digital (BK-DIGITAL)
           </h2>
         </div>
 
@@ -239,10 +181,10 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
           <div className="rounded-xl border border-neutral-800/90 bg-[#05060A] p-6">
             <div className="flex items-center gap-3 mb-2">
               <span className="font-mono text-xs font-bold text-[#D4AF37]">01</span>
-              <h3 className="font-display text-base font-bold text-white">Engineering Over Speculation</h3>
+              <h3 className="font-display text-base font-bold text-white">Engineering Over Aesthetics</h3>
             </div>
             <p className="text-xs text-neutral-300 leading-relaxed">
-              We do not fabricate marketing statistics or make unverifiable promises. We build reliable, measurable software systems where every database row and webhook event can be audited and verified.
+              Design is critical, but without reliable data validation, sub-second API execution, and persistent state management, a website is merely digital paint. At Bhavkan Digital (BK-DIGITAL), we build engines first, then dress them in elite visual aesthetics.
             </p>
           </div>
 
@@ -252,7 +194,7 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
               <h3 className="font-display text-base font-bold text-white">Zero Subscription Traps</h3>
             </div>
             <p className="text-xs text-neutral-300 leading-relaxed">
-              Why pay exorbitant per-seat monthly fees for SaaS tools that constrain your workflow? We build custom software where the client holds 100% intellectual property rights and zero user licensing penalties.
+              Why pay exorbitant per-seat monthly fees for SaaS tools that constrain your workflow? At Bhavkan Digital (BK-DIGITAL), we build custom software where the client holds 100% intellectual property rights and zero user licensing penalties.
             </p>
           </div>
 
@@ -262,7 +204,7 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
               <h3 className="font-display text-base font-bold text-white">Frictionless Autonomous Pipelines</h3>
             </div>
             <p className="text-xs text-neutral-300 leading-relaxed">
-              A high-end website must never be an isolated island. In our systems, a customer inquiry flows instantly to WhatsApp, syncs to Supabase PostgreSQL, qualifies lead urgency via AI, and alerts your team in seconds.
+              A high-end website must never be an isolated island. In our systems at Bhavkan Digital (BK-DIGITAL), a customer inquiry flows instantly to WhatsApp, syncs to Supabase PostgreSQL, qualifies lead urgency via AI, and alerts your team in seconds.
             </p>
           </div>
 
@@ -272,7 +214,7 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
               <h3 className="font-display text-base font-bold text-white">Direct Executive Accountability</h3>
             </div>
             <p className="text-xs text-neutral-300 leading-relaxed">
-              When you work with BK-DIGITAL, you don’t get bounced between layers of non-technical account managers. Himanshu directly participates in system architecture, milestone reviews, and technical sign-offs.
+              When you work with Bhavkan Digital (BK-DIGITAL), you don’t get bounced between layers of non-technical account managers. Himanshu directly participates in system architecture, milestone reviews, and technical sign-offs.
             </p>
           </div>
         </div>
@@ -288,7 +230,7 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
             Have a Complex Software or System Idea?
           </h3>
           <p className="mt-2 text-xs sm:text-sm text-neutral-300 max-w-xl leading-relaxed">
-            Schedule a confidential discovery session directly with Himanshu Mishra to review feasibility, database architecture, and project timelines.
+            Schedule a confidential discovery session directly with Himanshu Mishra at Bhavkan Digital (BK-DIGITAL) to review feasibility, database architecture, and project timelines.
           </p>
         </div>
 
