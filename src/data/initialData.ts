@@ -275,7 +275,7 @@ export const INITIAL_SERVICES: Service[] = [
 ];
 
 export const INITIAL_SETTINGS: SiteSettings = {
-  companyName: 'BK-DIGITAL',
+  companyName: 'Bhavkan Digital (BK-DIGITAL)',
   tagline: 'Digital Experiences. Intelligent Systems. Automated Growth.',
   whatsappNumber: '917217876220',
   whatsappDisplay: '+91 72178 76220',

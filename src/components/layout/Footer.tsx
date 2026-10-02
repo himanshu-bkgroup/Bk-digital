@@ -26,13 +26,16 @@ export const Footer: React.FC<FooterProps> = ({ settings, onNavigate }) => {
               onClick={() => onNavigate('/')}
               className="text-left font-display text-2xl font-black tracking-wider text-white hover:text-[#D4AF37] transition-colors"
             >
-              BK<span className="text-[#D4AF37]">-</span>DIGITAL
+              BHAVKAN<span className="text-[#D4AF37]">-</span>DIGITAL
             </button>
+            <p className="font-mono text-xs tracking-widest text-[#D4AF37] uppercase -mt-2">
+              BK-DIGITAL ENGINEERING STUDIO
+            </p>
             <p className="font-display text-sm tracking-wide text-[#C5CAD2]">
               Digital Experiences. Intelligent Systems. Automated Growth.
             </p>
             <p className="max-w-md text-xs leading-relaxed text-neutral-400">
-              BK-DIGITAL designs and engineers high-performance web applications, bespoke business software, and intelligent automation systems that turn digital touchpoints into automated operations.
+              Bhavkan Digital (BK-DIGITAL) designs and engineers high-performance web applications, bespoke business software, and intelligent automation systems that turn digital touchpoints into automated operations.
             </p>
 
             <div className="pt-2">
@@ -163,7 +166,7 @@ export const Footer: React.FC<FooterProps> = ({ settings, onNavigate }) => {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between border-t border-neutral-800/80 pt-8 sm:flex-row">
           <div className="flex items-center gap-2 text-xs text-neutral-400">
-            <span>© {currentYear} BK-DIGITAL</span>
+            <span>© {currentYear} Bhavkan Digital (BK-DIGITAL)</span>
             <span aria-hidden="true">·</span>
             <span>All rights reserved</span>
             <span aria-hidden="true">·</span>

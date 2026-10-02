@@ -1065,15 +1065,15 @@ export const AdminPage: React.FC<AdminPageProps> = ({
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
                 <div className="p-3 rounded-lg bg-black/50 border border-neutral-800 space-y-1">
-                  <span className="font-bold text-[#D4AF37] block">1. Claim Clean Netlify Subdomain</span>
+                  <span className="font-bold text-[#D4AF37] block">1. Selected Netlify Subdomain</span>
                   <p className="text-neutral-400 text-[11px]">
-                    In Netlify &rarr; <em>Site configuration</em> &rarr; <em>Change site name</em>, pick a professional name like <code className="text-white">bk-digital.netlify.app</code> or <code className="text-white">bkdigital.netlify.app</code> (100% free).
+                    Your selected URL is <code className="text-white">https://bhavkan-digital.netlify.app</code>. This is <strong>ideal for SEO</strong> because "Bhavkan Digital" is a 100% unique brand name that Google immediately distinguishes without acronym competition.
                   </p>
                 </div>
                 <div className="p-3 rounded-lg bg-black/50 border border-neutral-800 space-y-1">
                   <span className="font-bold text-[#D4AF37] block">2. Google Search Console via URL Prefix</span>
                   <p className="text-neutral-400 text-[11px]">
-                    Add <code className="text-white">https://bk-digital.netlify.app</code> using the <strong>URL Prefix</strong> option in Google Search Console. Verify via the HTML tag, and submit your <code className="text-neutral-300">/sitemap.xml</code>.
+                    Add <code className="text-white">https://bhavkan-digital.netlify.app</code> using the <strong>URL Prefix</strong> option in Google Search Console. Verify via the HTML tag, and submit your <code className="text-neutral-300">/sitemap.xml</code>.
                   </p>
                 </div>
                 <div className="p-3 rounded-lg bg-black/50 border border-neutral-800 space-y-1">

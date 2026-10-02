@@ -4,114 +4,114 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Homepage: High-priority commercial hub for Website Development & Custom Software India -->
+  <!-- Homepage: Bhavkan Digital (BK-DIGITAL) -->
   <url>
-    <loc>https://bk-digital.com/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Service: Website Development (Target Keyword #1 in India) -->
   <url>
-    <loc>https://bk-digital.com/services/web-development</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/services/web-development</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <!-- Service: Custom Software Development (Target Keyword #2 in India) -->
   <url>
-    <loc>https://bk-digital.com/services/software-development</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/services/software-development</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <!-- Service: Web Applications -->
   <url>
-    <loc>https://bk-digital.com/services/web-applications</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/services/web-applications</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
   <!-- Service: AI Automation Systems -->
   <url>
-    <loc>https://bk-digital.com/services/ai-automation</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/services/ai-automation</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
   <!-- Service: CRM & Dashboards -->
   <url>
-    <loc>https://bk-digital.com/services/crm-development</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/services/crm-development</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- All Services Directory -->
   <url>
-    <loc>https://bk-digital.com/services</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/services</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
 
   <!-- Executive Leadership & Founder: Himanshu Mishra (Founder & CEO) -->
   <url>
-    <loc>https://bk-digital.com/owner</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/owner</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- Projects Portfolio -->
   <url>
-    <loc>https://bk-digital.com/projects</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/projects</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- Case Studies -->
   <url>
-    <loc>https://bk-digital.com/case-studies</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/case-studies</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- About Company & Engineering Philosophy -->
   <url>
-    <loc>https://bk-digital.com/about</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/about</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <!-- Contact & Immediate Project Inquiry -->
   <url>
-    <loc>https://bk-digital.com/contact</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/contact</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- Start Project & Cost Estimator -->
   <url>
-    <loc>https://bk-digital.com/start-project</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/start-project</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- Comprehensive FAQs for Search Snippets -->
   <url>
-    <loc>https://bk-digital.com/faq</loc>
-    <lastmod>2026-09-27</lastmod>
+    <loc>https://bhavkan-digital.netlify.app/faq</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

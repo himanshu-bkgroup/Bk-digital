@@ -1,5 +1,5 @@
-# robots.txt for BK-DIGITAL (https://bk-digital.com)
-# Allow all search engine crawlers (Google, Bing, Yahoo, DuckDuckGo)
+# robots.txt for Bhavkan Digital (BK-DIGITAL)
+# https://bhavkan-digital.netlify.app
 
 User-agent: *
 Allow: /
@@ -13,4 +13,4 @@ User-agent: WhatsApp
 Allow: /
 
 # XML Sitemap Location
-Sitemap: https://bk-digital.com/sitemap.xml
+Sitemap: https://bhavkan-digital.netlify.app/sitemap.xml

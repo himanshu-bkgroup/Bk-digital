@@ -30,12 +30,17 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
         {/* Zone 1: Single Brand Wordmark */}
         <button
           onClick={() => handleLinkClick('/')}
-          className="group flex items-center gap-2 text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-[#D4AF37]"
-          aria-label="BK-DIGITAL Home"
+          className="group flex items-center gap-2.5 text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-[#D4AF37]"
+          aria-label="Bhavkan Digital Home"
         >
-          <span className="font-display text-xl font-extrabold tracking-wider text-white transition-colors group-hover:text-[#D4AF37]">
-            BK<span className="text-[#D4AF37]">-</span>DIGITAL
-          </span>
+          <div className="flex flex-col">
+            <span className="font-display text-lg sm:text-xl font-extrabold tracking-wider text-white transition-colors group-hover:text-[#D4AF37] leading-tight">
+              BHAVKAN<span className="text-[#D4AF37]"> DIGITAL</span>
+            </span>
+            <span className="text-[9px] font-mono tracking-widest text-neutral-400 uppercase">
+              BK-DIGITAL SYSTEMS
+            </span>
+          </div>
         </button>
 
         {/* Zone 2: Clean Typography Navigation (Desktop) */}
