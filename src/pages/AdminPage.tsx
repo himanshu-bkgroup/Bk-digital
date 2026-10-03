@@ -8,6 +8,7 @@ import {
 import { Lead, Project, Service, SiteSettings, AnalyticsEvent } from '../types';
 import { Storage } from '../lib/storage';
 import { sanitizeWhatsAppNumber } from '../lib/whatsapp';
+import defaultFounderPhoto from '../assets/images/himanshu_founder_ceo_1790965828306.jpg';
 
 interface AdminPageProps {
   projects: Project[];
@@ -44,7 +45,11 @@ export const AdminPage: React.FC<AdminPageProps> = ({
 
   // Founder Executive Portrait State
   const [founderAvatar, setFounderAvatar] = useState<string>(() => {
-    return localStorage.getItem('bk_founder_custom_avatar') || '/src/assets/images/himanshu_founder_ceo_1790965828306.jpg';
+    return (
+      localStorage.getItem('bk_founder_custom_avatar') ||
+      defaultFounderPhoto ||
+      '/founder.jpg'
+    );
   });
   const [photoUploadSuccess, setPhotoUploadSuccess] = useState(false);
   const founderPhotoInputRef = useRef<HTMLInputElement>(null);
@@ -68,7 +73,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
 
   const handleResetFounderPhoto = () => {
     localStorage.removeItem('bk_founder_custom_avatar');
-    setFounderAvatar('/src/assets/images/himanshu_founder_ceo_1790965828306.jpg');
+    setFounderAvatar(defaultFounderPhoto || '/founder.jpg');
     setPhotoUploadSuccess(true);
     setTimeout(() => setPhotoUploadSuccess(false), 4000);
   };
@@ -848,6 +853,9 @@ export const AdminPage: React.FC<AdminPageProps> = ({
               <div className="relative aspect-[3/4] w-36 sm:w-44 rounded-2xl overflow-hidden border-2 border-[#D4AF37]/50 bg-neutral-900 shadow-2xl shrink-0">
                 <img
                   src={founderAvatar}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/founder.jpg';
+                  }}
                   alt="Himanshu Mishra Active Portrait"
                   className="h-full w-full object-cover object-top"
                 />

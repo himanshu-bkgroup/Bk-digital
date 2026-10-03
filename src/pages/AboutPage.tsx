@@ -1,13 +1,17 @@
 import React from 'react';
 import { Target, Cpu, ShieldCheck, Globe, ArrowRight } from 'lucide-react';
 import { SiteSettings } from '../types';
+import defaultFounderPhoto from '../assets/images/himanshu_founder_ceo_1790965828306.jpg';
 
 export const AboutPage: React.FC<{
   settings: SiteSettings;
   onStartProject: () => void;
   onNavigate?: (path: string) => void;
 }> = ({ settings, onStartProject, onNavigate }) => {
-  const founderAvatar = localStorage.getItem('bk_founder_custom_avatar') || '/src/assets/images/himanshu_founder_ceo_1790965828306.jpg';
+  const founderAvatar =
+    localStorage.getItem('bk_founder_custom_avatar') ||
+    defaultFounderPhoto ||
+    '/founder.jpg';
 
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
@@ -49,6 +53,9 @@ export const AboutPage: React.FC<{
           <div className="relative h-28 w-28 rounded-2xl overflow-hidden border border-[#D4AF37]/40 shrink-0 bg-neutral-900 shadow-xl">
             <img
               src={founderAvatar}
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = '/founder.jpg';
+              }}
               alt="Himanshu Mishra - Founder & CEO, Bhavkan Digital (BK-DIGITAL)"
               referrerPolicy="no-referrer"
               className="h-full w-full object-cover object-top"

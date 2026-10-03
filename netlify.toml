@@ -21,6 +21,16 @@
   to = "/robots.txt"
   status = 200
 
+[[redirects]]
+  from = "/founder.jpg"
+  to = "/founder.jpg"
+  status = 200
+
+[[redirects]]
+  from = "/himanshu.jpg"
+  to = "/himanshu.jpg"
+  status = 200
+
 # SPA Fallback: Direct all routes to index.html with 200 HTTP status
 [[redirects]]
   from = "/*"

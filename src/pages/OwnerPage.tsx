@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { SiteSettings } from '../types';
 import { openWhatsApp } from '../lib/whatsapp';
+import defaultFounderPhoto from '../assets/images/himanshu_founder_ceo_1790965828306.jpg';
 
 interface OwnerPageProps {
   settings: SiteSettings;
@@ -17,7 +18,8 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
 
   const founderAvatar =
     localStorage.getItem('bk_founder_custom_avatar') ||
-    '/src/assets/images/himanshu_founder_ceo_1790965828306.jpg';
+    defaultFounderPhoto ||
+    '/founder.jpg';
 
   const handleFounderWhatsApp = () => {
     const text = 'Hello Himanshu, I would like to schedule a direct architectural discussion regarding a project with Bhavkan Digital (BK-DIGITAL).';
@@ -61,6 +63,9 @@ export const OwnerPage: React.FC<OwnerPageProps> = ({ settings, onNavigate }) =>
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-900 group/img">
                   <img
                     src={founderAvatar}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/founder.jpg';
+                    }}
                     alt="Himanshu Mishra - Founder & CEO, Bhavkan Digital (BK-DIGITAL)"
                     referrerPolicy="no-referrer"
                     className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"

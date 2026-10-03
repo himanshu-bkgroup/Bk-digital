@@ -1,9 +1,11 @@
 # Redirect double slash error from Search Console
 //sitemap.xml    /sitemap.xml    301
 
-# Static XML & robots direct passthrough
+# Static XML, robots & image direct passthrough
 /sitemap.xml     /sitemap.xml    200
 /robots.txt      /robots.txt     200
+/founder.jpg     /founder.jpg    200
+/himanshu.jpg    /himanshu.jpg   200
 
 # SPA fallback: Direct all application routes to index.html with 200 HTTP status
 /*               /index.html     200
