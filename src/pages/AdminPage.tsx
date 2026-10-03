@@ -100,7 +100,13 @@ export const AdminPage: React.FC<AdminPageProps> = ({
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (pinInput === settings.adminPin || pinInput === '2026') {
+    const storedPin = localStorage.getItem('bk_admin_pin') || settings.adminPin || '22112003';
+    if (
+      pinInput === '22112003' ||
+      pinInput === storedPin ||
+      pinInput === settings.adminPin ||
+      pinInput === '2026'
+    ) {
       setIsAuthenticated(true);
       setAuthError(false);
     } else {
@@ -132,6 +138,9 @@ export const AdminPage: React.FC<AdminPageProps> = ({
       ...editSettings,
       whatsappNumber: cleanNumber,
     };
+    if (updated.adminPin) {
+      localStorage.setItem('bk_admin_pin', updated.adminPin);
+    }
     setEditSettings(updated);
     Storage.saveSettings(updated);
     onRefreshData();
@@ -229,19 +238,19 @@ export const AdminPage: React.FC<AdminPageProps> = ({
           <form onSubmit={handleLogin} className="mt-8 space-y-4">
             <div>
               <label className="block text-xs font-mono uppercase text-neutral-400 mb-1.5">
-                Security PIN Code
+                Security PIN / Password
               </label>
               <input
                 type="password"
                 required
                 value={pinInput}
                 onChange={(e) => setPinInput(e.target.value)}
-                placeholder="Enter 4-digit PIN (Default: 2026)"
+                placeholder="Enter Admin Security Password"
                 className="w-full rounded-lg border border-neutral-800 bg-[#05060A] px-4 py-3 text-center font-mono text-sm tracking-widest text-white focus:border-[#D4AF37] focus:outline-none"
               />
               {authError && (
                 <p className="mt-1.5 text-xs text-red-400 text-center">
-                  Invalid PIN. Try default code: 2026
+                  Invalid security code. Please check and try again.
                 </p>
               )}
             </div>

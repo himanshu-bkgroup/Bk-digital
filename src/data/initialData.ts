@@ -283,7 +283,7 @@ export const INITIAL_SETTINGS: SiteSettings = {
   contactPhone: '+91 72178 76220',
   officeCity: 'Noida / Delhi NCR, India',
   internationalCoverage: ['India', 'USA', 'UK', 'Canada', 'Australia', 'UAE'],
-  adminPin: '2026',
+  adminPin: '22112003',
 };
 
 export const PROCESS_STEPS = [
